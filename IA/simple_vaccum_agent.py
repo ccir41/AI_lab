@@ -1,16 +1,14 @@
 # From: Artifical Intelligence, A Modern Approach by Russell and Norvig
 
 """
-|	Percept Sequence				Action			|
-|	---------------------------------------------	|		
-|	[A, Clean]						Right			|		
-|	[A, Dirty]						Suck			|
-|	[B, Clean]						Left			|
-|	[B, Dirty]						Suck			|
-|	---------------------------------------------	|
+	Percept 				SequenceAction			
+	---------------------------------------------			
+	[A, Clean]				Right	
+	[A, Dirty]				Suck
+	[B, Clean]				Left
+	[B, Dirty]				Suck
+	---------------------------------------------
 """
-
-# Please give credit when used
 
 
 class SimpleReflexAgent():
