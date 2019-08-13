@@ -1,16 +1,7 @@
+
 # Please give credit when used
 
-import numpy as np
 import pandas as pd
-
-
-# import data set
-dataset = pd.read_csv('hebb_and.csv')
-X = dataset.iloc[:, [0,1,2]].values # input sequence
-# print(X)
-
-y = dataset.iloc[:, 3].values # target output
-# print(y)
 
 
 class HebbLearning():
@@ -22,7 +13,7 @@ class HebbLearning():
 
 	def get_activation(self, net_input): # unit step activation
 			if net_input < 0:
-				return 0
+				return -1
 			else:
 				return 1
 
@@ -38,13 +29,19 @@ class HebbLearning():
 
 hl = HebbLearning()
 
+# import data set
+dataset = pd.read_csv('hebb_and.csv')
+X = dataset.iloc[:, [0,1,2]].values # input sequence
+y = dataset.iloc[:, 3].values # target output
+
 # weight training
 for x,y in zip(X,y):
 	w1,w2,b = hl.update_weight_bias(x, y)
 	print("Bias: {}\nWeight1: {}\nWeight2: {}\n".format(b,w1,w2))
 
-# testing 
+# testing
+print("\nAfter Training Hebbian Neural Network")
 for x in X:
 	net_input = hl.net_input(x)
 	output = hl.get_activation(net_input)
-	print(output)
+	print("input_sequence: {} => output: {}".format(x, output))
