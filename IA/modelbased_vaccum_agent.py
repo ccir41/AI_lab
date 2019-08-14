@@ -1,13 +1,13 @@
 # From: Artifical Intelligence, A Modern Approach by Russell and Norvig
 
 """
-	Percept 					SequenceAction			
+	Percept 				SequenceAction			
 	---------------------------------------------			
-	[A, Clean]					Right					
-	[A, Dirty]					Suck			
-	[B, Clean]					Left			
-	[B, Dirty]					Suck			
-	[A, Clean],[B, Clean]		No Operation	
+	[A, Clean]				Right					
+	[A, Dirty]				Suck			
+	[B, Clean]				Left			
+	[B, Dirty]				Suck			
+	[A, Clean],[B, Clean]	No Operation	
 	---------------------------------------------
 """
 

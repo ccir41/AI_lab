@@ -1,5 +1,5 @@
 # AI Lab Exercises
-Artificial Intelligence lab exercises implemented in python3 for bsc csit II/II TU
+  Artificial Intelligence lab exercises implemented in python3 for bsc csit II/II TU
 
 # Getting Started
   1.  pip install numpy
@@ -7,6 +7,10 @@ Artificial Intelligence lab exercises implemented in python3 for bsc csit II/II 
   3.  pip install sklearn
 
 # Repository Contains
+  # Intelligent Agents
+    1.  Simple Reflex Agent
+    2.  Model Based Agent
+
   # Search
     1.  DFS (Depth First Search)
     2.  BFS (Breadth First Search)
@@ -17,3 +21,4 @@ Artificial Intelligence lab exercises implemented in python3 for bsc csit II/II 
 
   # Artificial Neural Network (ANN)
     1.  Hebbian Learning 
+    2.  Perceptron Learning 
