@@ -8,7 +8,7 @@ class NeuralNetwork():
         self.inputNeurons = 2
         self.hiddenNeurons = 2
         self.outputNeurons = 1
-        self.learning_rate = 0.2
+        self.learning_rate = 0.1
 
         self.input_to_hidden_weight = np.random.uniform(size=(self.inputNeurons, self.hiddenNeurons))
         self.input_to_hidden_bias = np.random.uniform(size=(1, self.hiddenNeurons))
@@ -49,20 +49,19 @@ class NeuralNetwork():
         return predicted_output
 
     def parametersValue(self):
-        value = self.input_to_hidden_weight, self.input_to_hidden_bias, self.hidden_to_output_weight, self.hidden_to_output_bias
-        return value
+        print("Input to hidden weights: \n", self.input_to_hidden_weight)
+        print("Input to hidden bias: \n", self.input_to_hidden_bias)
+        print("Hidden to output weights: \n", self.hidden_to_output_weight)
+        print("Hidden to output bias: \n", self.hidden_to_output_bias)
+        print("Loss: " + str(np.mean(np.square(output_sequence - nn.forward(input_sequence)))))
+
 
 nn = NeuralNetwork()
 
 print("####################################")
 print("Before Training: ")
 print("####################################")
-input_to_hidden_weight, input_to_hidden_bias, hidden_to_output_weight, hidden_to_output_bias = nn.parametersValue()
-print("Input to hidden weights: \n", input_to_hidden_weight)
-print("Input to hidden bias: \n", input_to_hidden_bias)
-print("Hidden to output weights: \n", hidden_to_output_weight)
-print("Hidden to output bias: \n", hidden_to_output_bias)
-print("Loss: " + str(np.mean(np.square(output_sequence - nn.forward(input_sequence)))))
+nn.parametersValue()
 
 for i in range(10000):
     predicted_output = nn.train(input_sequence,output_sequence)
@@ -72,9 +71,4 @@ for i in range(10000):
 print("\n####################################")
 print("After Training: ")
 print("####################################")
-input_to_hidden_weight, input_to_hidden_bias, hidden_to_output_weight, hidden_to_output_bias = nn.parametersValue()
-print("Input to hidden weights: \n", input_to_hidden_weight)
-print("Input to hidden bias: \n", input_to_hidden_bias)
-print("Hidden to output weights: \n", hidden_to_output_weight)
-print("Hidden to output bias: \n", hidden_to_output_bias)
-print("Loss: " + str(np.mean(np.square(output_sequence - nn.forward(input_sequence)))))
+nn.parametersValue()

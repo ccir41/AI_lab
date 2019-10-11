@@ -10,14 +10,14 @@
 """
 
 # undirected graph
-graph = {
-    'A': ['B', 'C'],
-    'B': ['A', 'D', 'E'],
-    'C': ['A'],
-    'D': ['B'],
-    'E': ['B', 'F'],
-    'F': ['E']
-}
+# graph = {
+#     'A': ['B', 'C'],
+#     'B': ['A', 'D', 'E'],
+#     'C': ['A'],
+#     'D': ['B'],
+#     'E': ['B', 'F'],
+#     'F': ['E']
+# }
 
 # # #directed graph
 # graph = {
@@ -31,35 +31,41 @@ graph = {
 # }
 
 
+
+
+graph = {'S': set(['A', 'B', 'C']),
+         'A': set(['D', 'E', 'S']),
+         'D': set(['A']),
+         'E': set(['A']),
+         'B': set(['F', 'S']),
+         'F': set(['B']),
+         'C': set(['H', 'I', 'S']),
+         'H': set(['C']),
+         'I': set(['J', 'K', 'C']),
+         'J': set(['G', 'L']),
+         'G': set(['J', 'I']),
+         'L': set(['J']),
+         'K': set(['I'])}
+
+
+
 def dfs(graph, start, goal):
     visited = []
     stack = [start]
     while stack:
         current = stack.pop()
+        print("Current node is: {}".format(current))
         for neighbor in graph[current]:
             if not neighbor in visited:
                 stack.append(neighbor)
         visited.append(current)
+        print("visited is: {}".format(visited))
         if current == goal:
             break
     return visited
 
-
-print(dfs(graph, 'A', 'E'))
-
-# graph = {'S': set(['A', 'B', 'C']),
-#          'A': set(['D', 'E', 'S']),
-#          'D': set(['A']),
-#          'E': set(['A']),
-#          'B': set(['F', 'S']),
-#          'F': set(['B']),
-#          'C': set(['H', 'I', 'S']),
-#          'H': set(['C']),
-#          'I': set(['J', 'K']),
-#          'J': set(['G', 'L']),
-#          'G': set(['J']),
-#          'L': set(['J']),
-#          'K': set(['I'])}
+print(dfs(graph, 'S', 'G'))
 
 
-# print(dfs(graph, 'S', 'G'))
+
+# print(dfs(graph, 'A', 'E'))

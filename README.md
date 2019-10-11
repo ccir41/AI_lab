@@ -17,8 +17,10 @@
     3.  A* Search
     
   # Machine Learning
-    1.  Naive Bayes classifier as Stastical Learning 
+    1.  Naive Bayes classifier as Stastical Learning
+    2.  Genetic Algorithm 
 
   # Artificial Neural Network (ANN)
     1.  Hebbian Learning 
     2.  Perceptron Learning 
+    3.  Backpropagation Learning 
